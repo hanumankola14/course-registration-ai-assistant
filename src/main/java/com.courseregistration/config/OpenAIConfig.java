@@ -16,10 +16,6 @@ public class OpenAIConfig {
     @Value("${openai.api.url:https://api.openai.com/v1}")
     private String apiUrl;
 
-    /**
-     * Configures and registers a pre-configured RestClient bean for OpenAI API calls.
-     * Automatically attaches the base URL, JSON content type, and Authorization header if the API key is present.
-     */
     @Bean
     public RestClient openAiRestClient() {
         RestClient.Builder builder = RestClient.builder()
